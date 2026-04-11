@@ -1,0 +1,24 @@
+# Node modules
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+
+# Python cache
+backend/__pycache__/
+backend/.pytest_cache/
+backend/.venv/
+backend/tests/__pycache__/
+
+# Environment files
+frontend/.env
+
+# Docker
+*.log
+*.pid
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" id="Definitions_OrderFulfillment" targetNamespace="http://loomaxis.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.0.0">
+  <bpmn:process id="order-fulfillment" name="Order Fulfillment" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_Order" name="Order Received">
+      <bpmn:outgoing>Flow_Receive</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Task_ValidateOrder" name="Validate Order">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="validate-order" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_Receive</bpmn:incoming>
+      <bpmn:outgoing>Flow_ReserveInventory</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_ReserveInventory" name="Reserve Inventory">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="reserve-inventory" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_ReserveInventory</bpmn:incoming>
+      <bpmn:outgoing>Flow_NotifyShipping</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_NotifyShipping" name="Notify Shipping">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="notify-shipping" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_NotifyShipping</bpmn:incoming>
+      <bpmn:outgoing>Flow_Complete</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_Order" name="Order Dispatched">
+      <bpmn:incoming>Flow_Complete</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_Receive" sourceRef="StartEvent_Order" targetRef="Task_ValidateOrder" />
+    <bpmn:sequenceFlow id="Flow_ReserveInventory" sourceRef="Task_ValidateOrder" targetRef="Task_ReserveInventory" />
+    <bpmn:sequenceFlow id="Flow_NotifyShipping" sourceRef="Task_ReserveInventory" targetRef="Task_NotifyShipping" />
+    <bpmn:sequenceFlow id="Flow_Complete" sourceRef="Task_NotifyShipping" targetRef="EndEvent_Order" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_OrderFulfillment">
+    <bpmndi:BPMNPlane id="BPMNPlane_OrderFulfillment" bpmnElement="order-fulfillment">
+      <bpmndi:BPMNShape id="StartEvent_Order_di" bpmnElement="StartEvent_Order">
+        <dc:Bounds x="150" y="178" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ValidateOrder_di" bpmnElement="Task_ValidateOrder">
+        <dc:Bounds x="240" y="156" width="120" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_ReserveInventory_di" bpmnElement="Task_ReserveInventory">
+        <dc:Bounds x="420" y="156" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_NotifyShipping_di" bpmnElement="Task_NotifyShipping">
+        <dc:Bounds x="620" y="156" width="130" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_Order_di" bpmnElement="EndEvent_Order">
+        <dc:Bounds x="816" y="178" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_Receive_di" bpmnElement="Flow_Receive">
+        <di:waypoint x="186" y="196" />
+        <di:waypoint x="240" y="196" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ReserveInventory_di" bpmnElement="Flow_ReserveInventory">
+        <di:waypoint x="360" y="196" />
+        <di:waypoint x="420" y="196" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_NotifyShipping_di" bpmnElement="Flow_NotifyShipping">
+        <di:waypoint x="560" y="196" />
+        <di:waypoint x="620" y="196" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Complete_di" bpmnElement="Flow_Complete">
+        <di:waypoint x="750" y="196" />
+        <di:waypoint x="816" y="196" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,6 @@
+# File: backend/requirements.txt
+fastapi==0.116.0
+uvicorn==0.24.0
+python-multipart==0.0.6
+pyzeebe==4.5.0
+grpcio==1.73.1

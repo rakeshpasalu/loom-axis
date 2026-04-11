@@ -1,0 +1,72 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="40" x2="1120" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F1C2E"/>
+      <stop offset="0.52" stop-color="#172B44"/>
+      <stop offset="1" stop-color="#1E4258"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="198" y1="157" x2="548" y2="454" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EE6F57"/>
+      <stop offset="1" stop-color="#2BB8A8"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="680" y1="214" x2="1105" y2="585" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDF8F3"/>
+      <stop offset="1" stop-color="#F1EADF"/>
+    </linearGradient>
+    <filter id="shadow" x="118" y="92" width="1044" height="544" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="24"/>
+      <feGaussianBlur stdDeviation="22"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0470588 0 0 0 0 0.105882 0 0 0 0 0.168627 0 0 0 0.24 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2" result="shape"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="720" fill="#EFE7DC"/>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1096" cy="105" r="228" fill="#2BB8A8" fill-opacity="0.13"/>
+  <circle cx="184" cy="112" r="212" fill="#EE6F57" fill-opacity="0.16"/>
+  <g filter="url(#shadow)">
+    <rect x="162" y="136" width="956" height="456" rx="32" fill="#142338"/>
+    <rect x="162.5" y="136.5" width="955" height="455" rx="31.5" stroke="white" stroke-opacity="0.08"/>
+    <rect x="196" y="168" width="408" height="392" rx="28" fill="url(#accent)"/>
+    <rect x="196" y="168" width="408" height="392" rx="28" fill="black" fill-opacity="0.1"/>
+    <text x="238" y="228" fill="#FFF7F2" font-family="Space Grotesk, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="6">LOOMAXIS STUDIO</text>
+    <text x="238" y="304" fill="white" font-family="Space Grotesk, Arial, sans-serif" font-size="56" font-weight="700">Deploy BPMN</text>
+    <text x="238" y="366" fill="white" font-family="Space Grotesk, Arial, sans-serif" font-size="56" font-weight="700">like a control deck.</text>
+    <text x="238" y="432" fill="#FFF7F2" fill-opacity="0.8" font-family="DM Sans, Arial, sans-serif" font-size="21">
+      Validate Zeebe gateways, stage workflow packages,
+    </text>
+    <text x="238" y="466" fill="#FFF7F2" fill-opacity="0.8" font-family="DM Sans, Arial, sans-serif" font-size="21">
+      and read rollout feedback with calm operational clarity.
+    </text>
+    <rect x="238" y="504" width="154" height="46" rx="23" fill="white" fill-opacity="0.18"/>
+    <text x="270" y="534" fill="white" font-family="DM Sans, Arial, sans-serif" font-size="16" font-weight="700">Zeebe Ready</text>
+    <rect x="406" y="504" width="168" height="46" rx="23" fill="white" fill-opacity="0.12"/>
+    <text x="440" y="534" fill="white" font-family="DM Sans, Arial, sans-serif" font-size="16" font-weight="700">Batch Deploy</text>
+
+    <rect x="646" y="168" width="428" height="392" rx="28" fill="url(#panel)"/>
+    <rect x="678" y="204" width="364" height="64" rx="20" fill="#18283F"/>
+    <circle cx="716" cy="236" r="10" fill="#2BB8A8"/>
+    <text x="742" y="244" fill="white" font-family="DM Sans, Arial, sans-serif" font-size="18" font-weight="700">Gateway validated</text>
+    <text x="935" y="244" fill="#BBD7D3" font-family="IBM Plex Mono, monospace" font-size="16">localhost:26500</text>
+
+    <rect x="678" y="292" width="172" height="124" rx="22" fill="white"/>
+    <text x="706" y="328" fill="#64748B" font-family="DM Sans, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">STAGED</text>
+    <text x="706" y="374" fill="#18283F" font-family="Space Grotesk, Arial, sans-serif" font-size="42" font-weight="700">12</text>
+    <text x="706" y="401" fill="#64748B" font-family="DM Sans, Arial, sans-serif" font-size="16">workflow definitions</text>
+
+    <rect x="870" y="292" width="172" height="124" rx="22" fill="white"/>
+    <text x="898" y="328" fill="#64748B" font-family="DM Sans, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">SUCCESS RATE</text>
+    <text x="898" y="374" fill="#18283F" font-family="Space Grotesk, Arial, sans-serif" font-size="42" font-weight="700">96%</text>
+    <text x="898" y="401" fill="#64748B" font-family="DM Sans, Arial, sans-serif" font-size="16">latest rollout quality</text>
+
+    <rect x="678" y="438" width="364" height="90" rx="22" fill="white"/>
+    <circle cx="718" cy="475" r="10" fill="#2BB8A8"/>
+    <text x="744" y="464" fill="#18283F" font-family="DM Sans, Arial, sans-serif" font-size="18" font-weight="700">order-fulfillment.bpmn</text>
+    <text x="744" y="492" fill="#64748B" font-family="DM Sans, Arial, sans-serif" font-size="16">Workflow deployed successfully.</text>
+    <rect x="934" y="454" width="88" height="32" rx="16" fill="#DDF7F3"/>
+    <text x="954" y="475" fill="#0E6F64" font-family="DM Sans, Arial, sans-serif" font-size="14" font-weight="700">DEPLOYED</text>
+  </g>
+</svg>

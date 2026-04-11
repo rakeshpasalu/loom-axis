@@ -1,0 +1,21 @@
+name: loomaxis-studio
+
+services:
+  loomaxis-backend:
+    build: ./backend
+    container_name: loomaxis-backend
+    ports:
+      - "8000:8000"
+    environment:
+      PYTHONUNBUFFERED: "1"
+
+  loomaxis-frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_BACKEND_URL: http://localhost:8000
+    container_name: loomaxis-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - loomaxis-backend
