@@ -1,7 +1,5 @@
 # Loomaxis Studio
 
-![Loomaxis Studio hero](./docs/hero.svg)
-
 Loomaxis Studio is a polished BPMN deployment console for Zeebe teams. It turns a basic upload form into a command-deck style product with gateway validation, batch BPMN staging, and readable deployment feedback for every workflow in the rollout.
 
 The current product direction uses `Loomaxis Studio` as a working brand name. It is intentionally neutral and product-ready, but you should still do a proper trademark and domain check before registering it publicly.
